@@ -44,7 +44,7 @@ class Loader(object):
         # Extract images to ndarray using paths
         images_original, images_segmented = Loader.extract_images(paths_original, paths_segmented, init_size, one_hot)
 
-        # Get a color palette
+        # Get a color palette[TO: REPLACE IMAGE PALETEE]
         image_sample_palette = Image.open(paths_segmented[0])
         palette = image_sample_palette.getpalette()
 
