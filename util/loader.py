@@ -84,7 +84,8 @@ class Loader(object):
         # Cast to ndarray
         images_original = np.asarray(images_original, dtype=np.float32)
         images_segmented = np.asarray(images_segmented, dtype=np.uint8)
-
+        
+        # !!!EXAMINED HERE!!!
         # Change indices which correspond to "void" from 255
         images_segmented = np.where((images_segmented != 15) & (images_segmented != 255), 0, images_segmented)
         images_segmented = np.where(images_segmented == 15, 1, images_segmented)
