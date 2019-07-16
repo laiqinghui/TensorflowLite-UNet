@@ -34,6 +34,7 @@ def train(parser):
     gpu = parser.gpu
 
     # Create a model
+    # Model(inputs, outputs, teacher, is_training)
     model_unet = model.UNet(l2_reg=parser.l2reg).model
 
     # Set a loss function and an optimizer
@@ -62,7 +63,7 @@ def train(parser):
                   model_unet.is_training: False}
     test_dict = {model_unet.inputs: test.images_original, model_unet.teacher: test.images_segmented,
                  model_unet.is_training: False}
-
+    # !!!STOP HERE!!!
     for epoch in range(epochs):
         for batch in train(batch_size=batch_size, augment=is_augment):
             # Expansion of batch data
